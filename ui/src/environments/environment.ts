@@ -4,6 +4,10 @@
 
 export const environment = {
   production: false,
+  //use below if you use IIS Express
+//   apiCustomer: 'https://localhost:44381/api/customer',
+//   apiAccount: 'https://localhost:44381/api/account'
+  //use below if you have IIS setup for API
   apiCustomer: 'https://localhost/api/customer',
   apiAccount: 'https://localhost/api/account'
 };

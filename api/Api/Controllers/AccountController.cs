@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Api.Helpers;
+using System.Security.Principal;
 
 namespace Api.Controllers
 {
@@ -15,7 +15,8 @@ namespace Api.Controllers
         [HttpGet]
         public string Get()
         {
-            return AccountHelper.GetWinAuthAccount(HttpContext);
+            IPrincipal p = HttpContext.User;
+            return p.Identity.Name;
         }
 
     }

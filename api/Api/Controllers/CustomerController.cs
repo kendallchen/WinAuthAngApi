@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Data;
 using Data.Model;
-using Api.Helpers;
 
 namespace Api.Controllers
 {
@@ -40,7 +39,7 @@ namespace Api.Controllers
         [HttpPut("{id}")]
         public async Task<ActionResult<Customer>> PutCustomer(int id, Customer customer)
         {
-            customer.UpdatedBy = AccountHelper.GetWinAuthAccount(HttpContext);
+            customer.UpdatedBy = HttpContext.User.Identity.Name;
             return Ok(await this.CustomerData.Update(customer));
         }
 
@@ -48,7 +47,7 @@ namespace Api.Controllers
         [HttpPost]
         public async Task<ActionResult<Customer>> PostCustomer(Customer customer)
         {
-            customer.UpdatedBy = AccountHelper.GetWinAuthAccount(HttpContext);
+            customer.UpdatedBy = HttpContext.User.Identity.Name;
             return Ok(await this.CustomerData.Add(customer));
         }
 

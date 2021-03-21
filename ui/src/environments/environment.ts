@@ -5,19 +5,12 @@
 export const environment = {
   production: false,
   //use below if you use IIS Express
-//   apiCustomer: 'https://localhost:44381/api/customer',
-//   apiAccount: 'https://localhost:44381/api/account'
+  apiCustomer: 'https://localhost:44381/api/customer',
+  apiAccount: 'https://localhost:44381/api/account'
   //use below if you have IIS setup for API
-  apiCustomer: 'https://localhost/api/customer',
-  apiAccount: 'https://localhost/api/account'
+//   apiCustomer: 'https://localhost/api/customer',
+//   apiAccount: 'https://localhost/api/account'
 };
 
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+
 
